@@ -50,10 +50,7 @@
         {{ if gt .Params.tags 0 }}
         <div class="article-tag">
             <i class="fas fa-tag"></i>
-            {{ range $index, $value := .Params.tags }}
-            {{ if gt $index 0 }} {{ print ", " }} {{ end }}
-            <a class="tag-link" href="{{ "/tags/" | relLangURL }}{{ $value | urlize }}" rel="tag">{{ $value }}</a>
-            {{ end }}
+            {{ range $index, $value := .Params.tags }}{{ if gt $index 0 }}{{ print ", " }}{{ end }}<a class="tag-link" href="{{ "/tags/" | relLangURL }}{{ $value | urlize }}" rel="tag">{{ $value }}</a>{{ end }}
         </div>
         {{ end }}
       </div>
